@@ -4,8 +4,7 @@ if (!username) {
   localStorage.setItem("chat-username", username);
 }
 
-const socket = io("https://chat----app.glitch.me"); // Replace with your actual Glitch URL
-
+const socket = io("https://chat----app.glitch.me"); // Replace with your actual URL
 const input = document.getElementById("msgInput");
 const chatBox = document.getElementById("chat-box");
 
@@ -15,10 +14,12 @@ function sendMessage() {
 
   const data = { username, msg };
   socket.emit("chat-message", data);
+
   input.value = "";
 }
 
 socket.on("chat-message", (data) => {
+  // Only add the message once, when received from the server
   const p = document.createElement("p");
   p.innerHTML = `<strong>${data.username}:</strong> ${data.msg}`;
 
