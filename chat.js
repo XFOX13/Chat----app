@@ -1,11 +1,10 @@
-const socket = io("https://hissing-verbose-honey.glitch.me");
 let username = localStorage.getItem("chat-username");
 if (!username) {
   username = prompt("Enter your username:");
   localStorage.setItem("chat-username", username);
 }
 
-const socket = io("https://your-backend-url.repl.co"); // Replace with your Replit backend URL
+const socket = io("https://your-glitch-project.glitch.me"); // Replace with your Glitch URL
 
 const input = document.getElementById("msgInput");
 const chatBox = document.getElementById("chat-box");
