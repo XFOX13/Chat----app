@@ -5,7 +5,7 @@ const io = require("socket.io")(3000, {
 io.on("connection", socket => {
   console.log("User connected");
 
-  socket.on("chat-message", msg => {
-    socket.broadcast.emit("chat-message", msg);
+  socket.on("chat-message", data => {
+    socket.broadcast.emit("chat-message", data);
   });
 });
