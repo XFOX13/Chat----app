@@ -15,13 +15,6 @@ function sendMessage() {
 
   const data = { username, msg };
   socket.emit("chat-message", data);
-
-  const p = document.createElement("p");
-  p.innerHTML = `<strong>${data.username}:</strong> ${data.msg}`;
-  p.classList.add("my-message");
-  chatBox.appendChild(p);
-  chatBox.scrollTop = chatBox.scrollHeight;
-
   input.value = "";
 }
 
@@ -38,3 +31,8 @@ socket.on("chat-message", (data) => {
   chatBox.appendChild(p);
   chatBox.scrollTop = chatBox.scrollHeight;
 });
+
+function changeUsername() {
+  localStorage.removeItem("chat-username");
+  location.reload();
+}
