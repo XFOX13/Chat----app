@@ -4,7 +4,7 @@ if (!username) {
   localStorage.setItem("chat-username", username);
 }
 
-const socket = io("https://your-glitch-project.glitch.me"); // Replace with your Glitch URL
+const socket = io("https://chat----app.glitch.me"); // Replace with your actual Glitch URL
 
 const input = document.getElementById("msgInput");
 const chatBox = document.getElementById("chat-box");
