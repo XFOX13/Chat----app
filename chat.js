@@ -1,4 +1,14 @@
 let username = prompt("Enter your username:");
+function sendMessage() {
+  const msg = input.value;
+  socket.emit("chat-message", { username, msg });
+  input.value = "";
+}
+socket.on("chat-message", (data) => {
+  const p = document.createElement("p");
+  p.innerHTML = `<strong>${data.username}:</strong> ${data.msg}`;
+  chatBox.appendChild(p);
+});
 const socket = io("https://your-server-url.glitch.me"); // Replace with your backend server URL
 
 const input = document.getElementById("msgInput");
