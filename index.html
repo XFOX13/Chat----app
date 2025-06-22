@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Chat with Me</title>
+  <title>My Chat App</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    #chat-box {
+      height: 300px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      overflow-y: auto;
+      background: #f9f9f9;
+    }
+
+    .my-message {
+      text-align: right;
+      color: #00bcd4;
+      font-weight: bold;
+    }
+
+    .other-message {
+      text-align: left;
+      color: #333;
+    }
+
+    #chat-box p {
+      margin: 5px;
+      padding: 8px;
+      border-radius: 6px;
+      background-color: #e0e0e0;
+      max-width: 75%;
+    }
+  </style>
 </head>
 <body>
-  <h1>Chat App</h1>
+  <h2>Welcome to My Chat</h2>
   <div id="chat-box"></div>
-  <input type="text" id="msgInput" placeholder="Type a message..." />
+  <input type="text" id="msgInput" placeholder="Type your message..." />
   <button onclick="sendMessage()">Send</button>
 
   <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
