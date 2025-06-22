@@ -1,3 +1,4 @@
+let username = prompt("Enter your username:");
 const socket = io("https://your-server-url.glitch.me"); // Replace with your backend server URL
 
 const input = document.getElementById("msgInput");
