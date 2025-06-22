@@ -4,7 +4,7 @@ if (!username) {
   localStorage.setItem("chat-username", username);
 }
 
-const socket = io("https://your-backend-url.repl.co"); // Replace with your backend URL
+const socket = io("https://your-backend-url.repl.co"); // Replace with your Replit backend URL
 
 const input = document.getElementById("msgInput");
 const chatBox = document.getElementById("chat-box");
