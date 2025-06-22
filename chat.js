@@ -1,3 +1,4 @@
+const socket = io("https://hissing-verbose-honey.glitch.me");
 let username = localStorage.getItem("chat-username");
 if (!username) {
   username = prompt("Enter your username:");
