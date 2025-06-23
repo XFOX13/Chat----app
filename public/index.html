@@ -1,29 +1,23 @@
-const socket = io();
-const chatBox = document.getElementById("chat-box");
-const username = prompt("Enter your username");
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blue Chat App</title>
+  <style>
+    body { font-family: sans-serif; background: #e0f0ff; }
+    #chat-box { height: 300px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; background: #fff; }
+    .my-message { color: #007bff; }
+    .other-message { color: #333; }
+    #msg-input { width: 70%; }
+    #send-btn { width: 25%; background: #007bff; color: white; border: none; padding: 5px; }
+  </style>
+</head>
+<body>
+  <h2>💬 Blue Chat App</h2>
+  <div id="chat-box"></div>
+  <input id="msg-input" placeholder="Type a message..." />
+  <button id="send-btn">Send</button>
 
-document.getElementById("send-btn").addEventListener("click", () => {
-  const msg = document.getElementById("msg-input").value;
-  if (msg.trim()) {
-    socket.emit("chat-message", { username, msg });
-    document.getElementById("msg-input").value = "";
-  }
-});
-
-socket.on("chat-message", (data) => {
-  const p = document.createElement("p");
-  p.innerHTML = `<strong>${data.username}:</strong> ${data.msg}`;
-  p.classList.add(data.username === username ? "my-message" : "other-message");
-  chatBox.appendChild(p);
-  chatBox.scrollTop = chatBox.scrollHeight;
-});
-
-socket.on("chat-history", (messages) => {
-  messages.forEach(data => {
-    const p = document.createElement("p");
-    p.innerHTML = `<strong>${data.username}:</strong> ${data.msg}`;
-    p.classList.add(data.username === username ? "my-message" : "other-message");
-    chatBox.appendChild(p);
-  });
-  chatBox.scrollTop = chatBox.scrollHeight;
-});
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>
