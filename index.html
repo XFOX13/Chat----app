@@ -1,48 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>chat----app</title>
+  <title>Chat App</title>
   <style>
-    body {
-      font-family: sans-serif;
-      max-width: 600px;
-      margin: auto;
-    }
-
-    #chat-box {
-      height: 300px;
-      border: 1px solid #ccc;
-      padding: 10px;
-      overflow-y: auto;
-      background: #f9f9f9;
-    }
-
-    .my-message {
-      text-align: right;
-      color: #00bcd4;
-      font-weight: bold;
-    }
-
-    .other-message {
-      text-align: left;
-      color: #333;
-    }
-
-    #chat-box p {
-      margin: 5px;
-      padding: 8px;
-      border-radius: 6px;
-      background-color: #e0e0e0;
-      max-width: 75%;
-    }
+    #chat-box { height: 300px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; }
+    .my-message { color: blue; }
+    .other-message { color: black; }
   </style>
 </head>
 <body>
-  <h2>Welcome to chat----app</h2>
   <div id="chat-box"></div>
-  <input type="text" id="msgInput" placeholder="Type your message..." />
-  <button onclick="sendMessage()">Send</button>
-  <button onclick="changeUsername()">Change Username</button>
+  <input id="msg-input" placeholder="Type a message..." />
+  <button id="send-btn">Send</button>
 
   <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
   <script src="chat.js"></script>
